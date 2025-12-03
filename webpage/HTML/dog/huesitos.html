@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huesitos de Calcio - Mimaditos</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="/CSS/detalles_productos.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/IMAGES/logo_mimaditos.png" alt="Mimaditos Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html"><b>Inicio</b></a></li>
+                <li><a href="/HTML/productos.html"><b>Productos</b></a></li>
+                <li><a href="/HTML/cart/cart.html"><b>Carrito</b></a></li>
+                <li><a href="/HTML/account.html"><b>Perfil</b></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-detail-container">
+        <div class="detail-card">
+            <div class="detail-gallery">
+                <img src="/IMAGES/HuesitosHorneados.jpg" alt="Huesitos Suaves de Calcio" class="detail-main-img">
+            </div>
+
+            <div class="detail-info">
+                <h1 class="detail-title">Huesitos Horneados (80g)</h1>
+                <p class="detail-price">$40.00 MXN</p>
+
+                <div class="detail-description">
+                    <p>Horneados lentamente, son el snack crujiente perfecto para mordisquear sin culpas.</p>
+                </div>
+
+                <div class="detail-actions">
+                    <label for="quantity">Cantidad:</label>
+                    <input type="number" id="quantity" value="1" min="1" class="quantity-input">
+                    <button class="btn add-to-cart-btn">Agregar al Carrito</button>
+                    <p class="stock-info">¡Solo quedan 22 unidades!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="product-specs-section">
+        <div class="container specs-container">
+            <h2 class="section-title">Detalles del Producto</h2>
+
+            <div class="specs-content">
+                <details class="specs-description">
+                    <summary>
+                        <h3>Descripción Completa</h3>
+                    </summary>
+                    <p>Estos huesitos son la forma más divertida y sabrosa de darle un aporte extra de calcio a tu
+                        mascota. Su consistencia suave permite que sean masticados fácilmente por cachorros en
+                        crecimiento o perros mayores con sensibilidad dental. El sabor a queso natural los hace
+                        extremadamente apetecibles, convirtiéndolos en un gran motivador para el entrenamiento diario.
+                    </p>
+                </details>
+
+                <details class="specs-ingredients">
+                    <summary>
+                        <h3>Ingredientes y Beneficios</h3>
+                    </summary>
+                    <ul class="specs-list">
+                        <li><span>Ingredientes:</span> Derivados lácteos (sabor queso), carbonato de calcio, proteína
+                            hidrolizada y aceites naturales.</li>
+                        <li><span>Beneficios Clave:</span> Alto contenido de **Calcio** para huesos fuertes y
+                            crecimiento saludable.</li>
+                        <li><span>Textura:</span> Suave y masticable.</li>
+                        <li><span>Indicado para:</span> Cachorros, perros adultos y seniors.</li>
+                        <li><span>Presentación:</span> Bolsa resellable de 100 gramos.</li>
+                    </ul>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="similar-products-section">
+        <div class="container">
+            <h2 class="section-title">Mimaditos para Caninos</h2>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <a href="/HTML/dog/dentales.html" class="product-link">
+                        <div class="product-image">
+                            <img src="/IMAGES/PremiosDentales.jpg" alt="Palitos Dentales con Menta" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Premios Dentales (60g)</h3>
+                            <div class="product-price">$40.00 MXN</div>
+                        </div>
+                    </a>
+                    <button class="product-btn">Agregar al Carrito</button>
+                </div>
+
+                <div class="product-card">
+                    <a href="/HTML/dog/higado.html" class="product-link">
+                        <div class="product-image">
+                            <img src="/IMAGES/SnacksHigado.jpg" alt="Snacks de Hígado Deshidratado" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Snacks Suaves de Hígado (50g)</h3>
+                            <div class="product-price">$35.00 MXN</div>
+                        </div>
+                    </a>
+                    <button class="product-btn">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="notification-banner" class="notification-banner">
+        <span id="notification-message"></span>
+        <a href="/HTML/cart/cart.html" class="btn view-cart-btn">Ver Carrito</a>
+        <button class="close-notification-btn">✕</button>
+    </div>
+
+    <footer id="contacto">
+        <div class="footer-logo">
+            <img src="/IMAGES/logo_mimaditos.png" alt="Mimaditos Logo" class="logo-img">
+        </div>
+        <p>&copy; 2025 Mimaditos®</p>
+        <p>📧 mimaditos_contacto.gmail.com | 📱 55-1234-5678</p>
+    </footer>
+    <script src="/JS/cart.js"></script>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="/JS/account-form.js"></script>
+    <script src="/JS/display-user.js"></script>
+</body>
+
+</html>

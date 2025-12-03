@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Mimaditos</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="/CSS/cart.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/IMAGES/logo_mimaditos.png" alt="Mimaditos Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html"><b>Inicio</b></a></li>
+                <li><a href="/HTML/productos.html"><b>Productos</b></a></li>
+                <li><a href="/HTML/cart/cart.html"><b>Carrito</b></a></li>
+                <li><a href="/HTML/account.html"><b>Perfil</b></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-page-container">
+        <div class="container">
+            <h1 class="page-title">Tu Carrito</h1>
+
+            <div class="cart-content">
+                <section class="cart-items-list">
+
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <img src="/IMAGES/PolloDeshidratado.jpg" alt="Snack de Pollo" class="item-img">
+                        </div>
+                        <div class="item-details">
+                            <h2 class="item-title">Snacks Deshidratados de Pollo (40g)</h2>
+                            <p class="item-pet">Para Mininos</p>
+                            <div class="item-price-unit">$35.00 MXN / u</div>
+                        </div>
+
+                        <a href="/HTML/productos.html" class="continue-shopping">← Continuar Comprando</a>
+
+                </section>
+
+                <aside class="cart-summary">
+                    <h2>Resumen de la Orden</h2>
+
+                    <div class="summary-details">
+                        <div class="summary-line">
+                            <span>Subtotal (3 productos)</span>
+                            <span>$105.00 MXN</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Envío Estimado</span>
+                            <span class="shipping-cost">Gratis</span>
+                        </div>
+                        <div class="summary-line coupon">
+                            <input type="text" placeholder="Código de Descuento" class="coupon-input">
+                            <button class="apply-coupon-btn">Aplicar</button>
+                        </div>
+                    </div>
+
+                    <div class="summary-total">
+                        <h3>Total a Pagar</h3>
+                        <span class="total-price">$125.00 MXN</span>
+                    </div>
+
+                    <button class="btn checkout-btn">Finalizar Compra</button>
+                    <p class="tax-info">*El precio final incluye IVA.</p>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <div id="notification-banner" class="notification-banner">
+        <span id="notification-message"></span>
+        <a href="/HTML/cart/cart.html" class="btn view-cart-btn">Ver Carrito</a>
+        <button class="close-notification-btn">✕</button>
+    </div>
+
+    <footer id="contacto">
+        <div class="footer-logo">
+            <img src="/IMAGES/logo_mimaditos.png" alt="Mimaditos Logo" class="logo-img">
+        </div>
+        <p>&copy; 2025 Mimaditos®</p>
+        <p>📧 mimaditos_contacto.gmail.com | 📱 55-1234-5678</p>
+    </footer>
+    <script src="/JS/cart.js"></script>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="/JS/account-form.js"></script>
+    <script src="/JS/display-user.js"></script>
+</body>
+
+</html>

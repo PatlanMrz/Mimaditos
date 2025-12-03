@@ -4,20 +4,31 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #5a4a42;
+    background-color: #fff8f0;
 }
 
+/* HEADER ORIGINAL EXACTO - SIN CAMBIOS EN ALTURA */
 header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #f4a6c0 0%, #f4d4d4 50%, #f8c8dc 100%);
+    color: #5a4a42;
     padding: 1rem 0;
+    /* ORIGINAL */
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(244, 212, 212, 0.3);
+    border-bottom: 3px solid #e8b4bc;
+    width: 100%;
 }
 
 nav {
@@ -29,74 +40,220 @@ nav {
     padding: 0 2rem;
 }
 
+/* LOGO MÁS GRANDE PERO SIN MOVER EL HEADER */
 .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
+.logo-img {
+    height: 70px;
+    /* MÁS GRANDE - era 50px */
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.05);
+}
+
+/* NAV-LINKS BIEN DISTRIBUIDOS */
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
+    /* Más espacio entre enlaces */
     list-style: none;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin: 0 2rem;
+}
+
+.nav-links li {
+    flex-shrink: 0;
 }
 
 .nav-links a {
-    color: white;
+    color: #5a4a42;
     text-decoration: none;
-    transition: opacity 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
-    opacity: 0.8;
+    background-color: rgba(255, 248, 240, 0.3);
+    transform: translateY(-2px);
 }
 
-.hero {
-    background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f0f0" width="1200" height="600"/></svg>');
+/* Estilos para el carrusel */
+.hero-carousel {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    background: #fff8f0;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     background-size: cover;
     background-position: center;
-    color: white;
-    text-align: center;
-    padding: 8rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero h1 {
-    font-size: 3rem;
+.carousel-slide.active {
+    opacity: 1;
+}
+
+/* Fondos degradados para cada slide */
+.carousel-slide:nth-child(1) {
+    background: linear-gradient(135deg, #f4a6c0 0%, #f4d4d4 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-icon {
+    font-size: 4rem;
     margin-bottom: 1rem;
 }
 
-.hero p {
+.carousel-slide:nth-child(2) {
+    background: linear-gradient(135deg, rgba(212, 138, 148, 0.9) 0%, rgba(232, 180, 188, 0.8) 50%, rgba(244, 212, 212, 0.7) 100%);
+}
+
+.carousel-slide:nth-child(3) {
+    background: linear-gradient(135deg, rgba(248, 200, 220, 0.9) 0%, rgba(244, 166, 192, 0.8) 50%, rgba(212, 138, 148, 0.7) 100%);
+}
+
+.slide-content {
+    text-align: center;
+    color: #5a4a42;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.slide-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(255, 248, 240, 0.5);
+}
+
+.slide-content p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+/* Botones de navegación */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(232, 180, 188, 0.7);
+    border: none;
+    color: #5a4a42;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.carousel-btn:hover {
+    background: rgba(244, 212, 212, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 2rem;
+}
+
+.next-btn {
+    right: 2rem;
+}
+
+/* Indicadores */
+.carousel-indicators {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 3;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #e8b4bc;
+}
+
+.indicator.active {
+    background: #e8b4bc;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background: #f4d4d4;
 }
 
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
-    background: #ff6b6b;
-    color: white;
+    background: #e8b4bc;
+    color: #5a4a42;
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(232, 180, 188, 0.4);
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(232, 180, 188, 0.6);
+    background: #f4d4d4;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section-title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #667eea;
+    color: #d48a94;
 }
 
 .products-grid {
@@ -106,27 +263,61 @@ nav {
     margin-bottom: 4rem;
 }
 
+/* --- ESTILO CLAVE 1: TARJETA COMO CONTEXTO RELATIVO --- */
 .product-card {
-    background: white;
+    background: #fffaf5;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(212, 138, 148, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f4d4d4;
+    /* CLAVE para el enlace de bloque */
+    position: relative;
 }
 
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 30px rgba(212, 138, 148, 0.2);
 }
 
+/* --- ESTILO CLAVE 2: ENLACE QUE CUBRE TODA LA TARJETA --- */
+.product-link {
+    display: flex;
+    flex-direction: column;
+    /* Apilamos la imagen y la info */
+    text-decoration: none;
+    color: inherit;
+    z-index: 10;
+    /* Asegura que cubra el contenido de la tarjeta */
+
+    /* Evita que el enlace subraye el texto de la tarjeta */
+    text-decoration: none;
+    color: inherit;
+    /* Mantiene los colores de texto originales */
+}
+
+
+/* IMÁGENES QUE CUBREN COMPLETAMENTE EL CUADRO ROSA */
 .product-image {
     width: 100%;
     height: 250px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f4a6c0 0%, #f4d4d4 50%, #f8c8dc 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4rem;
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+/* El efecto de hover se aplica al enlace, no a la card directamente para evitar errores */
+.product-card:hover .product-img {
+    transform: scale(1.05);
 }
 
 .product-info {
@@ -136,42 +327,52 @@ nav {
 .product-title {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: #5a4a42;
 }
 
 .product-description {
-    color: #666;
+    color: #8a7369;
     margin-bottom: 1rem;
     font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .product-price {
     font-size: 1.5rem;
-    color: #ff6b6b;
+    color: #d48a94;
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
+/* --- ESTILO CLAVE 3: BOTÓN SOBREPUESTO AL ENLACE --- */
 .product-btn {
     width: 100%;
     padding: 0.8rem;
-    background: #667eea;
-    color: white;
+    background: #e8b4bc;
+    color: #5a4a42;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+
+    /* CLAVE para que funcione sobre el enlace */
+    position: relative;
+    z-index: 20;
 }
 
 .product-btn:hover {
-    background: #764ba2;
+    background: #f4d4d4;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(232, 180, 188, 0.4);
 }
 
 .benefits {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #fffaf5 0%, #fff8f0 100%);
     padding: 4rem 2rem;
+    border-top: 1px solid #f4d4d4;
+    border-bottom: 1px solid #f4d4d4;
 }
 
 .benefits-grid {
@@ -185,36 +386,480 @@ nav {
 .benefit-card {
     text-align: center;
     padding: 2rem;
+    background: #fffaf5;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(212, 138, 148, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f4d4d4;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(212, 138, 148, 0.2);
 }
 
 .benefit-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+}
+
+/* Tamaño base para todas las imágenes */
+.benefit-image {
+    width: 230px;
+    height: 230px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* Imagen 1: +10px */
+.image-1 {
+    width: 240px;
+    height: 240px;
+}
+
+/* Imágenes 3 y 4: +20px */
+.image-3,
+.image-4 {
+    width: 250px;
+    height: 250px;
+}
+
+.benefit-card:hover .benefit-image {
+    transform: scale(1.1);
 }
 
 .benefit-title {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
-    color: #667eea;
+    color: #d48a94;
+}
+
+.benefit-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #8a7369;
 }
 
 footer {
-    background: #2c3e50;
-    color: white;
+    background: linear-gradient(135deg, #f4a6c0 0%, #f4d4d4 50%, #f8c8dc 100%);
+    color: #5a4a42;
     text-align: center;
     padding: 2rem;
+    border-top: 3px solid #e8b4bc;
 }
 
+/* LOGO EN EL FOOTER MÁS GRANDE */
+.footer-logo {
+    margin-bottom: 1rem;
+}
+
+.footer-logo .logo-img {
+    height: 50px;
+    /* MÁS GRANDE */
+    width: auto;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets y móviles grandes */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
+
+    /* Header y navegación ORIGINAL */
+    header {
+        padding: 0.8rem 0;
+        /* ORIGINAL */
     }
 
-    .nav-links {
+    nav {
+        padding: 0 1rem;
+        flex-direction: column;
+        /* Para móvil */
         gap: 1rem;
     }
 
+    .logo-img {
+        height: 50px;
+        /* Un poco más pequeño en móvil */
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    /* Carrusel */
+    .hero-carousel {
+        height: 400px;
+    }
+
+    .slide-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .slide-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+    .prev-btn {
+        left: 0.5rem;
+    }
+
+    .next-btn {
+        right: 0.5rem;
+    }
+
+    .carousel-indicators {
+        bottom: 1rem;
+        gap: 0.8rem;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Botones */
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Sección principal */
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Productos */
     .products-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
+
+    .product-card {
+        margin: 0 auto;
+        max-width: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .product-info {
+        padding: 1.2rem;
+    }
+
+    .product-title {
+        font-size: 1.2rem;
+    }
+
+    .product-price {
+        font-size: 1.3rem;
+    }
+
+    /* Beneficios */
+    .benefits {
+        padding: 2rem 1rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .benefit-card {
+        padding: 1.5rem;
+    }
+
+    .benefit-icon {
+        height: 200px;
+    }
+
+    .benefit-image {
+        width: 190px;
+        height: 190px;
+    }
+
+    /* Imagen 1: +10px */
+    .image-1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Imágenes 3 y 4: +20px */
+    .image-3,
+    .image-4 {
+        width: 210px;
+        height: 210px;
+    }
+
+    .benefit-title {
+        font-size: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-logo .logo-img {
+        height: 40px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        margin: 0.3rem 0;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    .logo-img {
+        height: 45px;
+    }
+
+    .hero-carousel {
+        height: 350px;
+    }
+
+    .slide-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .slide-content p {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .benefit-card {
+        padding: 1.2rem;
+    }
+
+    .benefit-icon {
+        height: 170px;
+    }
+
+    .benefit-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    /* Imagen 1: +10px */
+    .image-1 {
+        width: 170px;
+        height: 170px;
+    }
+
+    /* Imágenes 3 y 4: +20px */
+    .image-3,
+    .image-4 {
+        width: 180px;
+        height: 180px;
+    }
+
+    .benefit-title {
+        font-size: 1.1rem;
+    }
+
+    .footer-logo .logo-img {
+        height: 35px;
+    }
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA LA PÁGINA DE PRODUCTOS --- */
+
+/* Contenedor Flexbox para alinear título y buscador */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Título de la sección de productos (se centra en la fila de Flex) */
+.section-title-productos {
+    /* Estilos visuales base */
+    font-size: 2.5rem;
+    color: #d48a94;
+
+    /* Propiedades clave de alineación con Flexbox */
+    flex-grow: 1;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* Estilos básicos para el formulario de búsqueda */
+.search-form {
+    flex-shrink: 0;
+}
+
+.search-form input[type="search"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-color: #f4a6c0;
+    font-size: 1em;
+}
+
+.search-form button {
+    padding: 8px 15px;
+    background-color: #f4a6c0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+.category-divider {
+    /* Estilos de fuente y espaciado del encabezado */
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #333;
+    margin: 40px 0 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Pseudo-elemento para crear la línea */
+.category-divider::before {
+    content: "";
+    display: block;
+    border-top: 2px solid #ccc;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+}
+
+/* Estilo para el texto dentro del encabezado que 'oculta' la línea */
+.category-divider span {
+    background-color: white;
+    padding: 0 15px;
+}
+
+/* ================================================= */
+/* === ESTILOS PARA LA NOTIFICACIÓN DEL CARRITO === */
+/* ================================================= */
+
+.notification-banner {
+    position: fixed;
+    bottom: -100px;
+    /* Inicialmente fuera de la pantalla */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    /* Asegura que esté por encima de todo */
+
+    /* Estilos Visuales */
+    background-color: #d48a94;
+    /* Color principal */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    /* Transición para la animación de entrada/salida */
+    transition: bottom 0.5s ease-out;
+}
+
+.notification-banner.show {
+    bottom: 20px;
+    /* Posición visible en la pantalla */
+}
+
+#notification-message {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.view-cart-btn {
+    /* Sobreescribe el estilo de botón general para que combine con el banner */
+    background-color: #f8e8f0;
+    color: #d48a94;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.view-cart-btn:hover {
+    background-color: #fffaf5;
+}
+
+.close-notification-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.close-notification-btn:hover {
+    opacity: 1;
 }

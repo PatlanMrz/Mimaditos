@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil y Acceso - Mimaditos</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="/CSS/account-form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/IMAGES/logo_mimaditos.png" alt="Mimaditos Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html"><b>Inicio</b></a></li>
+                <li><a href="/HTML/productos.html"><b>Productos</b></a></li>
+                <li><a href="/HTML/cart/cart.html"><b>Carrito</b></a></li>
+
+                <li><a href="/HTML/account.html" id="nav-profile-link"><b>Perfil</b></a></li>
+
+                <li><button class="btn transparent btn-logout" id="logout-btn"
+                        style="display:none; margin: 0; padding: 10px 15px; background-color: var(--color-primary); color: white; border: none; cursor: pointer;">Cerrar
+                        Sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="auth-main">
+
+        <div id="user-dashboard"
+            style="display:none; width: 80%; max-width: 900px; padding: 40px; background-color: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <h1 id="welcome-message" style="color: var(--color-primary); margin-bottom: 20px;"></h1>
+            <hr style="border-color: var(--color-secondary); margin-bottom: 20px;">
+
+            <h3>Mi Perfil</h3>
+            <p style="margin-top: 15px;">Panel de control de Mimaditos. Aquí puedes gestionar tu cuenta y revisar
+                pedidos.</p>
+            <table style="width: 100%; margin-top: 20px;">
+                <tr>
+                    <td style="font-weight: bold; width: 150px;">Nombre Completo:</td>
+                    <td id="dashboard-name"></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Email:</td>
+                    <td id="dashboard-email"></td>
+                </tr>
+            </table>
+
+            <h3 style="margin-top: 30px;">Próximamente: Historial de Pedidos y Direcciones</h3>
+            <p>Esta sección se completará con la información de tus compras y tus direcciones de envío.</p>
+
+            <button class="btn" style="margin-top: 30px; background: #a6626c;">Editar Perfil</button>
+        </div>
+
+    </main>
+
+    <footer id="contacto">
+        <div class="footer-logo">
+            <img src="/IMAGES/logo_mimaditos.png" alt="Mimaditos Logo" class="logo-img">
+        </div>
+        <p>&copy; 2025 Mimaditos®</p>
+        <p>📧 mimaditos_contacto.gmail.com | 📱 55-1234-5678</p>
+    </footer>
+
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="/JS/account-form.js"></script>
+    <script src="/JS/display-user.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+/* ================================================= */
+/* === ESTILOS ESPECÍFICOS PARA DETALLES PRODUCTOS === */
+/* ================================================= */
+
+/* Contenedor principal de la página de detalle */
+.product-detail-container {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: #fffaf5;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(212, 138, 148, 0.2);
+}
+
+/* Tarjeta principal: Flexbox para alinear imagen e info */
+.detail-card {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    /* Alinea los elementos arriba */
+}
+
+/* Columna de la Galería (Imagen) */
+.detail-gallery {
+    flex: 1;
+    /* Ocupa la mitad del espacio disponible */
+    max-width: 50%;
+    position: sticky;
+    /* Se queda fijo al hacer scroll */
+    top: 120px;
+    /* Separación del header */
+    padding: 1rem;
+    background-color: #f8e8f0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(232, 180, 188, 0.3);
+}
+
+.detail-main-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+/* Columna de la Información */
+.detail-info {
+    flex: 1;
+    /* Ocupa la otra mitad del espacio disponible */
+    padding-top: 1rem;
+}
+
+.detail-title {
+    font-size: 2.5rem;
+    color: #d48a94;
+    margin-bottom: 0.5rem;
+}
+
+.detail-price {
+    font-size: 2rem;
+    color: #e8b4bc;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #f4d4d4;
+    padding-bottom: 1rem;
+}
+
+.detail-description p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Acciones de compra */
+.detail-actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.quantity-input {
+    padding: 10px;
+    width: 70px;
+    text-align: center;
+    border: 1px solid #e8b4bc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #5a4a42;
+}
+
+.add-to-cart-btn {
+    /* Reutiliza .btn de styles.css, solo lo ajustamos ligeramente */
+    padding: 12px 30px;
+}
+
+.stock-info {
+    font-size: 0.9rem;
+    color: #d48a94;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+
+/* ======================================= */
+/* === NUEVOS ESTILOS DE ESPECIFICACIONES === */
+/* ======================================= */
+
+.product-specs-section {
+    padding: 3rem 0;
+    margin-top: 3rem;
+    background-color: #f8f0f4;
+    /* Fondo sutil para diferenciar */
+    border-top: 1px solid #e8b4bc;
+}
+
+/* Contenedor Flex para las dos columnas */
+.specs-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 2rem;
+}
+
+.specs-description,
+.specs-ingredients {
+    flex: 1;
+    /* Distribuye el espacio a partes iguales */
+    padding: 1.5rem;
+    background-color: #fffaf5;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(212, 138, 148, 0.1);
+}
+
+.specs-description summary,
+.specs-ingredients summary {
+    cursor: pointer;
+    list-style: none;
+    /* Oculta el triángulo de despliegue predeterminado */
+    /* El padding que estaba en la tarjeta lo movemos al detalle, quitamos el 1.5rem de arriba */
+    padding: 0;
+    margin-bottom: 0.5rem;
+}
+
+.specs-description summary::before,
+.specs-ingredients summary::before {
+    content: '+';
+    /* Ícono de cerrado */
+    color: #e8b4bc;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.specs-description[open] summary::before,
+.specs-ingredients[open] summary::before {
+    content: '-';
+    /* Ícono de abierto */
+    /* transform: rotate(45deg); /* Puedes usar transform para una flecha o un símbolo */
+}
+
+.specs-description h3,
+.specs-ingredients h3 {
+    display: inline;
+    /* Asegura que el h3 no fuerce una nueva línea */
+    font-size: 1.5rem;
+    color: #d48a94;
+    margin: 0;
+    border-bottom: none;
+    /* Quitamos el borde inferior que teníamos */
+    padding-bottom: 0;
+}
+
+.specs-description p {
+    padding-top: 1rem;
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+
+.specs-ingredients .specs-list {
+    padding-top: 1rem;
+}
+
+.specs-description summary+* {
+    margin-top: 0.5rem;
+}
+
+/* Estilo de la lista de especificaciones/ingredientes */
+.specs-list {
+    list-style: none;
+    padding: 0;
+}
+
+.specs-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(244, 212, 212, 0.3);
+    /* Fondo ligero para cada punto */
+    border-radius: 5px;
+    font-weight: 500;
+    color: #5a4a42;
+}
+
+.specs-list span {
+    font-weight: bold;
+    color: #d48a94;
+    /* Color rosa del sitio para destacar la etiqueta */
+}
+
+/* Sección de Productos Similares */
+.similar-products-section {
+    padding: 4rem 0;
+}
+
+.similar-products-section .section-title {
+    margin-bottom: 3rem;
+    color: #e8b4bc;
+    /* Usamos un color rosa más suave */
+}
+
+/* --- Responsive Design para MÓVIL --- */
+@media (max-width: 900px) {
+    .product-detail-container {
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+
+    .detail-card {
+        flex-direction: column;
+        /* Apila imagen e info en móvil */
+        gap: 2rem;
+    }
+
+    .detail-gallery {
+        max-width: 100%;
+        position: static;
+        /* Desactiva sticky en móvil */
+        top: auto;
+    }
+
+    .detail-title {
+        font-size: 2rem;
+    }
+
+    .detail-price {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .detail-actions {
+        /* Fuerza una columna simple para que los elementos no se amontonen */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .add-to-cart-btn {
+        width: 100%;
+    }
+
+    /* Responsive para Especificaciones */
+    .specs-content {
+        flex-direction: column;
+        /* Apilar en móviles */
+    }
+}

@@ -5,94 +5,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mimaditos</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="/CSS/styles.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <!-- <div class="logo"> <img src="/webpage/IMAGES/logo_mimaditos.png" alt="logo"></div> -->
+            <div class="logo">
+                <img src="/IMAGES/logo_mimaditos.png" alt="Mimaditos Logo" class="logo-img">
+            </div>
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#beneficios">Beneficios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="/index.html"><b>Inicio</b></a></li>
+                <li><a href="/HTML/productos.html"><b>Productos</b></a></li>
+                <li><a href="/HTML/cart/cart.html"><b>Carrito</b></a></li>
+                <li><a href="/HTML/account.html"><b>Perfil</b></a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero" id="inicio">
-        <h1>PREMIOS</h1>
-        <p>Croquetas de alta calidad con ingredientes naturales</p>
-        <a href="#productos" class="btn">Ver Productos</a>
+    <section class="hero-carousel" id="inicio">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <div class="slide-icon">❤️</div>
+                <div class="slide-content">
+                    <h1>PREMIOS HECHOS CON AMOR PARA LOS QUE MÁS QUIERES</h1>
+                    <p>Nuestros premios, hechos con ingredientes 100% naturales, son la elección perfecta para nutrir y
+                        consentir a tu compañero fiel, cuidando su salud en cada mordisco.</p>
+                    <a href="/HTML/productos.html" class="btn">Ver todos los productos</a>
+                </div>
+            </div>
+
+            <div class="carousel-slide">
+                <div class="slide-icon">🐕‍🦺</div>
+                <div class="slide-content">
+                    <h1>RECOMPENSAS PARA AVENTUREROS CANINOS</h1>
+                    <p>Dale a tu mejor amigo la energía que necesita para cada paseo y juego. Nuestros snacks, ricos en
+                        nutrientes naturales, son el combustible perfecto para el espíritu aventurero de tu perro.</p>
+                    <a href="/HTML/dog/huesitos.html" class="btn">Snacks para perros</a>
+                </div>
+            </div>
+
+            <div class="carousel-slide">
+                <div class="slide-icon">🐈</div>
+                <div class="slide-content">
+                    <h1>DELICADEZA ARTESANAL PARA PALADARES EXIGENTES</h1>
+                    <p>Sabemos que tu gato es un conocedor. Por eso, creamos premios con texturas y sabores
+                        irresistibles, elaborados solo con los ingredientes más puros.</p>
+                    <a href="/HTML/cat/pescado.html" class="btn">Premios para gatos</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-btn prev-btn">‹</button>
+        <button class="carousel-btn next-btn">›</button>
+
+        <div class="carousel-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
     </section>
 
     <div class="container" id="productos">
-        <h2 class="section-title">Conoce nuestros productos</h2>
+        <h2 class="section-title">LOS FAVORITOS DE ELLOS</h2>
         <div class="products-grid">
+
             <div class="product-card">
-                <div class="product-image">🐤</div>
+                <div class="product-image">
+                    <img src="/IMAGES/PolloDeshidratado.jpg" alt="Snacks Deshidratados de Pollo" class="product-img">
+                </div>
                 <div class="product-info">
                     <h3 class="product-title">Snacks Deshidratados de Pollo (40g)</h3>
-                    <p class="product-description">Pollo 100% natural deshidratado. Rico en proteína, crocante e
-                        irresistible. ¡El premio que ronronean!</p>
                     <div class="product-price">$35.00 MXN</div>
-                    <button class="product-btn">Agregar al Carrito</button>
+                    <button class="product-btn">Comprar Ahora</button>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="product-image">🐟</div>
-                <div class="product-info">
-                    <h3 class="product-title">Cremitas de Atún (12g)</h3>
-                    <p class="product-description">Suave pasta de atún para consentir a tu felino. Ideal para reforzar
-                        vínculos o esconder medicamentos.</p>
-                    <div class="product-price">$20.00 MXN</div>
-                    <button class="product-btn">Agregar al Carrito</button>
+                <div class="product-image">
+                    <img src="/IMAGES/GalletasPescado.jpg" alt="Galletas de Pescado" class="product-img">
                 </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">🐠</div>
                 <div class="product-info">
-                    <h3 class="product-title">Galletas de Pescado(50g)</h3>
-                    <p class="product-description">Galletas horneadas con harina de pescado. Ayudan a limpiar suavemente
-                        los dientes mientras disfrutan.</p>
+                    <h3 class="product-title">Galletas de Pescado (50g)</h3>
                     <div class="product-price">$30.00 MXN</div>
-                    <button class="product-btn">Agregar al Carrito</button>
+                    <button class="product-btn">Comprar Ahora</button>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="product-image">🦴</div>
+                <div class="product-image">
+                    <img src="/IMAGES/HuesitosHorneados.jpg" alt="Huesitos Horneados" class="product-img">
+                </div>
                 <div class="product-info">
                     <h3 class="product-title">Huesitos Horneados (80g)</h3>
-                    <p class="product-description">Horneados lentamente, son el snack crujiente perfecto para
-                        mordisquear sin culpas.</p>
                     <div class="product-price">$40.00 MXN</div>
-                    <button class="product-btn">Agregar al Carrito</button>
+                    <button class="product-btn">Comprar Ahora</button>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="product-image">🦷</div>
-                <div class="product-info">
-                    <h3 class="product-title">Premios Dentales (60 g)</h3>
-                    <p class="product-description">Reduce sarro y refresca el aliento mientras tu perro mastica feliz.
-                        ¡Salud en cada mordida!</p>
-                    <div class="product-price">$40.00 MXN</div>
-                    <button class="product-btn">Agregar al Carrito</button>
+                <div class="product-image">
+                    <img src="/IMAGES/SnacksHigado.jpg" alt="Snacks Suaves de Higado" class="product-img">
                 </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">🐕‍🦺</div>
                 <div class="product-info">
                     <h3 class="product-title">Snacks Suaves de Higado (50g)</h3>
-                    <p class="product-description">Textura suave y sabor intenso. Ideales para entrenamiento o mimar a
-                        perros adultos.</p>
                     <div class="product-price">$35.00 MXN</div>
-                    <button class="product-btn">Agregar al Carrito</button>
+                    <button class="product-btn">Comprar Ahora</button>
                 </div>
             </div>
         </div>
@@ -102,34 +120,55 @@
         <h2 class="section-title">¿Por Qué Elegirnos?</h2>
         <div class="benefits-grid">
             <div class="benefit-card">
-                <div class="benefit-icon">🏥</div>
+                <div class="benefit-icon">
+                    <img src="/IMAGES/IMG1.png" alt="Salud en cada mordisco" class="benefit-image image-1">
+                </div>
                 <h3 class="benefit-title">Salud en Cada Mordisco</h3>
                 <p>Formulados para beneficiar articulaciones, pelaje, digestión o higiene dental.</p>
             </div>
             <div class="benefit-card">
-                <div class="benefit-icon">🎉</div>
+                <div class="benefit-icon">
+                    <img src="/IMAGES/IMG2.png" alt="La recompensa perfecta" class="benefit-image">
+                </div>
                 <h3 class="benefit-title">La Recompensa Perfecta</h3>
                 <p>Tamaño y textura ideal para entrenamiento sin desbalancear su dieta.</p>
             </div>
             <div class="benefit-card">
-                <div class="benefit-icon">🏠</div>
+                <div class="benefit-icon">
+                    <img src="/IMAGES/IMG3.png" alt="Hecho con amor" class="benefit-image image-3">
+                </div>
                 <h3 class="benefit-title">Hecho con Amor, Como en Casa</h3>
                 <p>Elaboración artesanal que prioriza el sabor y la salud.</p>
             </div>
             <div class="benefit-card">
-                <div class="benefit-icon">💪</div>
+                <div class="benefit-icon">
+                    <img src="/IMAGES/IMG4.png" alt="Puro sin rellenos" class="benefit-image image-4">
+                </div>
                 <h3 class="benefit-title">Puro, Sin Rellenos</h3>
                 <p>Solo carne/pescado y verduras. Nada de subproductos, conservantes ni colorantes artificiales.</p>
             </div>
         </div>
     </section>
 
+    <div id="notification-banner" class="notification-banner">
+        <span id="notification-message"></span>
+        <a href="/HTML/cart/cart.html" class="btn view-cart-btn">Ver Carrito →</a>
+        <button class="close-notification-btn">✕</button>
+    </div>
+
     <footer id="contacto">
+        <div class="footer-logo">
+            <img src="/IMAGES/logo_mimaditos.png" alt="Mimaditos Logo" class="logo-img">
+        </div>
         <p>&copy; 2025 Mimaditos®</p>
-        <p> mimaditos_contacto.gmail.com | 📱 55-1234-5678</p>
+        <p>📧 mimaditos_contacto.gmail.com | 📱 55-1234-5678</p>
     </footer>
 
-    <script src="JS/script.js"></script>
+    <script src="/JS/script.js"></script>
+    <script src="/JS/cart.js"></script>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="/JS/account-form.js"></script>
+    <script src="/JS/display-user.js"></script>
 </body>
 
 </html>
